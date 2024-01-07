@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class ="light-blue-text text-darken-4 center-align">Category</h3>
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_categories')}}" class="btn-large light-blue darken-2">
+            Add catagory <i class="fa-solid fa-circle-plus"></i>
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

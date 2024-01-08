@@ -23,3 +23,14 @@ def add_categories():
         db.session.commit()
         return redirect(url_for("categories"))
     return render_template("add_categories.html")
+
+
+
+@app.route("/edit_categories/<int:category_id>", methods=["GET", "POST"])
+def edit_categories(category_id):
+    category = Category.query.get_or_404(category_id)
+    if request.method == "POST":
+        category.category_name = request.form.get("category_name")
+        db.session.commit()
+        return redirect(url_for("categories"))
+    return render_template("edit_categories.html", category=category)
